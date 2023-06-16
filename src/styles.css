@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    src: url('assets/fonts/Tajawal-Regular.ttf');
+    font-family: Tajawal;
+}
+* {
+    font-family: Tajawal;
+}
+a {
+    cursor: pointer !important;
+}
+
+.register-sec .box-right,
+.register-sec .box-left {
+    padding: 0 40px 0;
+}
+.register-sec .box-right .sec-title h1,
+    .register-sec .box-left .sec-title h1{
+    font-size: 46px;
+}
+
+.btn-submit {
+    background-color: #b30909 !important;
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+}
+
+.popular-sec {
+    background-color: #131722;
+    padding: 60px 0 40px;
+}
+
+.popular-sec .sec-title .title {
+    font-size: 48px;
+}
+.popular-sec .sec-title .desc {
+    color: #949cb0;
+}
+.popular-sec .movie-item a {
+    text-decoration: none;
+}
+.popular-sec .movie-item a .img-movie img{
+    border-radius: 5px;
+}
+.popular-sec .movie-item a .info-movie span {
+    color: #949cb0;
+    font-size: 14px;
+}
+.popular-sec .movie-item a .info-movie h3 {
+    margin-bottom: 0;
+}
+.popular-sec .view-more::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #2a2d36;
+    z-index: 0;
+}
+.popular-sec .view-more .btn{
+    border-color: #2a2d36;
+    background: #131722;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    z-index: 1;
+    transition: all .2s ease-in-out;
+}
+.popular-sec .view-more .btn:hover {
+    background-color: #b30909;
+}
+
+.now_playing_movies_sec {
+    padding: 60px 0;
+}
+.now_playing_movies_sec .movie-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0018382353) 0%, black 100%);
+    width: 100%;
+    height: 100%;
+}
+.now_playing_movies_sec .movie-item:hover::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0018382353) 0%, black 80%);
+
+}
+.now_playing_movies_sec .movie-item .content-movie {
+    bottom: 8%;
+    left: 10%;
+    z-index: 5;
+}
+.now_playing_movies_sec .movie-item .content-movie a {
+    text-decoration: none;
+    color: #c9c3c3;
+}
+.now_playing_movies_sec .movie-item .content-movie a i{
+    font-size: 10px;
+}
+
+.free_streaming_sec {
+    padding: 60px 0;
+}
+.breadcrumb-nav {
+    background-color: #131722;
+    padding: 60px 0;
+}
+.breadcrumb-nav .breadcrumb-item+.breadcrumb-item::before {
+    color: #fff;
+}
+
+.now_playing_movies_sec .page-item .page-link {
+    padding: 6px 20px;
+    color: #131722;
+    transition: all .2s ease;
+}
+.now_playing_movies_sec .page-item .page-link.nav-active {
+    background-color: #b30909;
+    color: #fff;
+}

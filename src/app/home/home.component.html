@@ -1,0 +1,144 @@
+<section class="popular-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center">
+                <div class="sec-title">
+                    <h2 class="title fw-bold text-white text-capitalize">
+                        The most trending <br /> movies and <br /> TV shows now
+                    </h2>
+                    <p class="desc">
+                        Most watched movies by days
+                    </p>
+                </div>
+            </div>
+            <div *ngFor="let movie of trendingAll" class="col-lg-2 mb-4 movie-item">
+                <a [routerLink]="['/movieDetails', 'movie' , movie.id]">
+                    <div class="img-movie mb-2">
+                        <img [src]="imgPrefix+movie.poster_path" class="w-100" />
+                    </div>
+                    <div class="info-movie">
+                        <span *ngIf="movie.release_date!=null">{{movie.release_date | date:'yyyy'}}</span>
+                        <span *ngIf="movie.first_air_date!=null">{{movie.first_air_date | date:'yyyy'}}</span>
+                        <span> , {{movie.media_type}}</span>
+                        <h3 *ngIf="movie.title!=null" class="h6 text-white">{{movie.title}}</h3>
+                        <h3 *ngIf="movie.name!=null" class="h6 text-white">{{movie.name}}</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="view-more d-flex justify-content-center mt-5 position-relative">
+            <a routerLink="/movies" class="btn text-white p-0"> View More </a>
+        </div>
+    </div>
+</section>
+
+<section class="now_playing_movies_sec">
+    <div class="container">
+        <div class="sec-title">
+            <div class="sec-title">
+                <p class="desc mb-0">
+                    Most watched movies by days
+                </p>
+                <h2 class="h1 title fw-bold text-capitalize">
+                    Popular TV Series Right Now
+                </h2>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div *ngFor="let movie of trendingTV" class="col-md-3 mb-4">
+                <a [routerLink]="['/movieDetails', 'tv' , movie.id]">
+                    <div class="movie-item position-relative">
+                        <div class="img-movie">
+                            <img [src]="imgPrefix+movie.backdrop_path" class="w-100" />
+                        </div>
+                        <div class="content-movie position-absolute">
+                            <h3 class="text-capitalize text-white mb-1">{{movie.name}}</h3>
+                            <a href="#"> more details <i class="fa fa-chevron-right ms-1"></i> </a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="now_playing_movies_sec pt-0">
+    <div class="container">
+        <div class="sec-title">
+            <div class="sec-title">
+                <p class="desc mb-0">
+                    Most watched movies by days
+                </p>
+                <h2 class="h1 title fw-bold text-capitalize">
+                    Popular Movies Right Now
+                </h2>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div *ngFor="let movie of trendingFilms" class="col-md-3 mb-4">
+                <a [routerLink]="['/movieDetails', 'movie' , movie.id]">
+                    <div class="movie-item position-relative">
+                        <div class="img-movie">
+                            <img [src]="imgPrefix+movie.poster_path" class="w-100" />
+                        </div>
+                        <div class="content-movie position-absolute">
+                            <h3 class="text-capitalize text-white mb-1 h5">{{movie.title}}</h3>
+                            <a routerLink="/movie"> more details <i class="fa fa-chevron-right ms-1"></i> </a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="free_streaming_sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="img-sec">
+                    <img src="../../assets/home/side-image01.png" class="w-100" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right-side">
+                    <div class="title mb-5">
+                        <h4 class="h1 fw-bold">
+                            Best pick for hassle-free streaming experience.
+                        </h4>
+                    </div>
+                    <ul class="content list-unstyled">
+                        <li class="d-flex align-items-center mb-4">
+                            <img src="../../assets/home/icon01.png" height="50"/>
+                            <div class="disc ps-4">
+                                <h5 class="h4 fw-bold">Access while traveling </h5>
+                                <p class="fs-6">
+                                    Keep access to your entertainment content while roaming the world.Pick from thousands.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-center mb-4">
+                            <img src="../../assets/home/icon02.png" height="50"/>
+                            <div class="disc ps-4">
+                                <h5 class="h4 fw-bold">Stream with no interruptions</h5>
+                                <p class="fs-6">
+                                    Pause for snacks, not buffering. Stream smoothly with our lightning-fast NordLynx protocol network.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <img src="../../assets/home/icon03.png" height="50"/>
+                            <div class="disc ps-4">
+                                <h5 class="h4 fw-bold">Stay secure at all times </h5>
+                                <p class="fs-6">
+                                    Securely access and enjoy your favorite content, even on public Wi-Fi. Your connection
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,47 @@
+<nav class="breadcrumb-nav d-flex" aria-label="breadcrumb">
+    <div class="container justify-content-between">
+      <h2 class="text-capitalize text-white h1 fw-bold"> {{movieOBJ.title}} </h2>
+      <ol class="breadcrumb ">
+        <li class="breadcrumb-item "><a routerLink="/home" class="text-decoration-none text-white">Home</a></li>
+        <li class="breadcrumb-item "><a routerLink="/movies" class="text-decoration-none text-white">movies</a></li>
+        <li class="breadcrumb-item active text-white" aria-current="page">movie Details</li>
+      </ol>
+    </div>
+  </nav>
+  
+  <section class="movie-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="movie-img">
+                    <img  [src]="imgPrefix+movieOBJ.poster_path" class="w-100">
+                </div>
+            </div>
+            <div class="col-md-8 ps-4">
+                <div class="details">
+                    <span>{{movieOBJ.tagline}}</span>
+                    <h4 *ngIf="movieOBJ.title != null" class="fw-bold h2">{{movieOBJ.title}}</h4>
+                    <h4 *ngIf="movieOBJ.name != null" class="fw-bold h2">{{movieOBJ.name}}</h4>
+                    <div class="mt-4 pt-4 pb-4 border-top">
+                        <span class="d-block mb-2 fw-bold fs-5 text-capitalize">overview:</span>
+                        <p class="mb-0">{{movieOBJ.overview}}</p>
+                    </div>
+                    <ul class="list-unstyled border-top pt-4">
+                        <li class="text-capitalize mb-2">
+                            language: <span class="badge rounded-pill text-bg-info text-white ms-2">{{movieOBJ.original_language}}</span>
+                        </li>
+                        <li class="text-capitalize mb-2">
+                            release date: <span class="badge rounded-pill text-bg-info text-white ms-2">{{movieOBJ.release_date}}</span>
+                        </li>
+                        <li class="text-capitalize mb-2">
+                            popularity: <span class="badge rounded-pill text-bg-info text-white ms-2">{{movieOBJ.popularity}}</span>
+                        </li>
+                        <li class="text-capitalize mb-2">
+                            vote Average: <span class="badge rounded-pill text-bg-info text-white ms-2">{{movieOBJ.vote_average}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>

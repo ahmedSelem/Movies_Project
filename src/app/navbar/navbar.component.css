@@ -1,0 +1,7 @@
+.navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 20px;
+}
+.nav-active {
+    color: #b30909 !important;
+    border-bottom: 2px solid #b30909;
+}
