@@ -1,0 +1,53 @@
+
+<section class="auth-sec d-flex vh-100">
+    <div class="box-left w-50 d-none d-md-block">
+        <!-- /* Image Background */ -->
+    </div>
+    <div class="box-right d-flex align-items-center w-50">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="sec-title mb-5">
+                        <h1 class="text-capitalize fw-bold">{{loginMode ? 'Login' : 'Register'}}</h1>
+                    </div>
+                    <form #authForm="ngForm" (ngSubmit)="submitAuth(authForm)">        
+                        <div class="row mb-3 mt-3">
+                            <div class="col-12 mb-3">
+                                <label class="form-label"> Email </label>
+                                <input ngModel #email required email name="email" type="text" class="form-control" />
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label">Password </label>
+                                <input ngModel #password required maxlength="6" name="password" type="password" class="form-control" />
+                            </div>
+                            <div *ngIf="!loginMode" class="col-12">
+                                <label class="form-label">Confirm password </label>
+                                <input ngModel #confirmPassword required name="confirmPassword" type="password" class="form-control mb-2" />
+                                <div *ngIf="confirmPassword.value != password.value && confirmPassword.value"  class="alert-box">
+                                    <span class="alert text-danger p-0 mb-0 fs-6">Password and confirm password does not match</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button *ngIf="!isLoading; else loading;" [disabled]="!authForm.valid" class="btn btn-submit text-white mt-3">
+                                {{loginMode ? 'Login' : 'Register'}}
+                            </button>
+                        </div>
+                        <ng-template #loading>
+                            <div class="lds-ring text-center"><div></div><div></div><div></div><div></div></div>
+                        </ng-template>
+                    </form>
+                    <div *ngIf="showErorr" class="alert-box mt-2">
+                        <div class="alert alert-danger p-2">
+                            {{showErorr}}
+                        </div>
+                    </div>
+                    <div class="have-account mt-5 d-flex justify-content-center flex-wrap">
+                        <p class="text-capitalize text-muted">{{loginMode ? 'create new account' : 'you have already account ?'}}</p>
+                        <a class="text-capitalize ms-2" (click)="triggerMode()">{{loginMode ? 'register now' : 'Login'}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

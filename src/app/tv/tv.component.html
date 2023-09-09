@@ -10,16 +10,15 @@
 
 <section class="now_playing_movies_sec pt-0">
   <div class="container">
-    <div class="d-flex justify-content-between align-items-center mt-5">
-
+    <div class="d-flex justify-content-between align-items-center flex-wrap mt-5">
       <h3 class="fw-bold mb-0">Here You Can Find Your Favorite TV !</h3>
-      <div class="w-25">
+      <div class="input-search mt-3 mt-md-0 w-25">
         <input [(ngModel)]="term" type="text" class="form-control" placeholder="Search movie by name ...">
       </div>
     </div>
 
     <div class="row mt-5">
-      <div *ngFor="let movie of listTv | searchMovies : term" class="col-md-3 mb-4">
+      <div *ngFor="let movie of listTv | searchMovies : term" class="col-6 col-md-3 mb-4">
         <a [routerLink]="['/movieDetails', 'tv', movie.id]">
           <div class="movie-item position-relative">
             <div class="img-movie">

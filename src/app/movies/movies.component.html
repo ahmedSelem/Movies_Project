@@ -10,20 +10,20 @@
 
 <section class="now_playing_movies_sec pt-0">
   <div class="container">
-    <div class="d-flex justify-content-between align-items-center mt-5">
-
+    <div class="d-flex justify-content-between align-items-center flex-wrap mt-5">
       <h3 class="fw-bold mb-0">Here You Can Find Your Favorite Movie!</h3>
-      <div class="w-25">
+      <div class="input-search mt-3 mt-md-0 w-25">
         <input [(ngModel)]="term" type="text" class="form-control" placeholder="Search movie by name ...">
       </div>
     </div>
 
     <div class="row mt-5">
-      <div *ngFor="let movie of trendingMovies | searchMovies : term : 'movie'" class="col-md-3 mb-4">
+      <div *ngFor="let movie of trendingMovies | searchMovies : term : 'movie'" class="col-6 col-md-3 mb-4">
         <a [routerLink]="['/movieDetails', 'movie' , movie.id]">
           <div class="movie-item position-relative">
             <div class="img-movie">
               <img [src]="imgPrefix+movie.poster_path" class="w-100" />
+              <span></span>
             </div>
             <div class="content-movie position-absolute">
               <h3 class="text-capitalize text-white mb-1 h5">{{movie.title}}</h3>
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <nav class="d-flex mt-4 justify-content-center" aria-label="Page navigation example">
+    <nav class="d-flex mt-4 justify-content-center flex-wrap" aria-label="Page navigation example">
       <ul class="pagination">
         <li *ngIf="currentNumPage != 1" class="page-item" (click)="prevPage()">
           <a class="page-link" aria-label="Previous">

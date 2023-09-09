@@ -10,12 +10,12 @@ a {
     cursor: pointer !important;
 }
 
-.register-sec .box-right,
-.register-sec .box-left {
+.auth-sec .box-right,
+.auth-sec .box-left {
     padding: 0 40px 0;
 }
-.register-sec .box-right .sec-title h1,
-    .register-sec .box-left .sec-title h1{
+.auth-sec .box-right .sec-title h1,
+    .auth-sec .box-left .sec-title h1{
     font-size: 46px;
 }
 
@@ -25,7 +25,9 @@ a {
     height: 40px;
     border-radius: 30px;
 }
-
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    left: -30px;
+}
 .popular-sec {
     background-color: #131722;
     padding: 60px 0 40px;
@@ -122,4 +124,36 @@ a {
 .now_playing_movies_sec .page-item .page-link.nav-active {
     background-color: #b30909;
     color: #fff;
+}
+
+
+@media (width < 768px) {
+    .auth-sec .box-right,
+    .auth-sec .box-left {
+        width: 100% !important;
+    }
+    .popular-sec .sec-title .title {
+        font-size: 30px;
+    }
+    .breadcrumb-nav h2{
+        font-size: 20px;
+    }
+    .now_playing_movies_sec .input-search{
+        width: 100% !important;
+    }
+    .now_playing_movies_sec .page-item .page-link {
+        padding: 3px 8px;
+    }
+    .now_playing_movies_sec .movie-item .content-movie h3{
+        font-size: 16px;
+    }
+}
+
+@media (768px <= width < 992px) {
+    .popular-sec .sec-title .title {
+        font-size: 44px;
+    }
+    .now_playing_movies_sec .input-search{
+        width: 30% !important;
+    } 
 }

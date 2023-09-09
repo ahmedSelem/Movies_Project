@@ -1,9 +1,14 @@
 
-<footer  *ngIf="_router.url !== '/login' && _router.url !== '/register'">
+<footer  *ngIf="showFooter">
     <div class="container">
-        <div class="row">
-            <div class="col-md-7">
+        <div class="row justify-content-between">
+            <div class="col-md-7 d-flex justify-content-center justify-content-md-start">
                 <p class="text-white mb-0 py-3">Copyright © 2023, All Rights Reserved</p>
+            </div>
+            <div class="col-md-5 d-flex justify-content-center justify-content-md-end">
+                <p class="text-white mb-0 py-0 py-md-3">
+                    developed by @AhmedSelem
+                </p>
             </div>
         </div>
     </div>

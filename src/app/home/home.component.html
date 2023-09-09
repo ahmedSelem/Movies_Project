@@ -1,7 +1,7 @@
 <section class="popular-sec">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 d-flex align-items-center">
+            <div class="col-md-4 col-lg-4 d-flex align-items-center">
                 <div class="sec-title">
                     <h2 class="title fw-bold text-white text-capitalize">
                         The most trending <br /> movies and <br /> TV shows now
@@ -11,22 +11,22 @@
                     </p>
                 </div>
             </div>
-            <div *ngFor="let movie of trendingAll" class="col-lg-2 mb-4 movie-item">
+            <div *ngFor="let movie of trendingAll" class="col-6 col-md-4 col-lg-2 mb-4 movie-item">
                 <a [routerLink]="['/movieDetails', 'movie' , movie.id]">
                     <div class="img-movie mb-2">
                         <img [src]="imgPrefix+movie.poster_path" class="w-100" />
                     </div>
                     <div class="info-movie">
-                        <span *ngIf="movie.release_date!=null">{{movie.release_date | date:'yyyy'}}</span>
-                        <span *ngIf="movie.first_air_date!=null">{{movie.first_air_date | date:'yyyy'}}</span>
+                        <span *ngIf="movie.release_date">{{movie.release_date | date:'yyyy'}}</span>
+                        <span *ngIf="movie.first_air_date">{{movie.first_air_date | date:'yyyy'}}</span>
                         <span> , {{movie.media_type}}</span>
-                        <h3 *ngIf="movie.title!=null" class="h6 text-white">{{movie.title}}</h3>
-                        <h3 *ngIf="movie.name!=null" class="h6 text-white">{{movie.name}}</h3>
+                        <h3 *ngIf="movie.title" class="h6 text-white">{{movie.title}}</h3>
+                        <h3 *ngIf="movie.name" class="h6 text-white">{{movie.name}}</h3>
                     </div>
                 </a>
             </div>
         </div>
-        <div class="view-more d-flex justify-content-center mt-5 position-relative">
+        <div class="view-more d-flex justify-content-center mt-3 mt-md-5 position-relative">
             <a routerLink="/movies" class="btn text-white p-0"> View More </a>
         </div>
     </div>
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="row mt-5">
-            <div *ngFor="let movie of trendingTV" class="col-md-3 mb-4">
+            <div *ngFor="let movie of trendingTV" class="col-md-4 col-lg-3 mb-4">
                 <a [routerLink]="['/movieDetails', 'tv' , movie.id]">
                     <div class="movie-item position-relative">
                         <div class="img-movie">
@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="row mt-5">
-            <div *ngFor="let movie of trendingFilms" class="col-md-3 mb-4">
+            <div *ngFor="let movie of trendingFilms" class="col-6 col-md-3 mb-4">
                 <a [routerLink]="['/movieDetails', 'movie' , movie.id]">
                     <div class="movie-item position-relative">
                         <div class="img-movie">
@@ -100,7 +100,7 @@
                     <img src="../../assets/home/side-image01.png" class="w-100" />
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-3 mt-md-0">
                 <div class="right-side">
                     <div class="title mb-5">
                         <h4 class="h1 fw-bold">
